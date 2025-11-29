@@ -1,0 +1,59 @@
+:root {
+  --primary: #646cff;
+  --bg: #f0f0f0;
+  --card-bg: #ffffff;
+  --text: #213547;
+}
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+.container {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 400px;
+  text-align: center;
+}
+nav {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 5px; /* Espacio entre botones */
+}
+button:hover {
+  background-color: #535bf2;
+}
+.counter-display {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: var(--primary);
+}
