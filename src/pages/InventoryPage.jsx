@@ -2,35 +2,35 @@ import { useState, useEffect } from "react";
 
 function InventoryPage() {
     const [quantity, setQuantity] = useState(0);
+    const [cargado, setCargado] = useState(false);
 
     useEffect(() => {
         const stockGuardado = localStorage.getItem('stock_actual');
-        if (stockGuardado) {
+        if (stockGuardado !== null) {
             setQuantity(parseInt(stockGuardado));
         }
+        setCargado(true);
     }, []);
 
     useEffect(() => {
-        localStorage.setItem('stock_actual', quantity);
-    }, [quantity]);
+        if (cargado) {
+            localStorage.setItem('stock_actual', quantity);
+        }
+    }, [quantity, cargado]);
 
     const agregar = () => {
-        if(quantity > 0)
-            setQuantity(quantity + 1);
+        setQuantity(quantity + 1);
     };
 
     const vender = () => {
-        if(quantity > 0)
-        {
+        if(quantity > 0) {
             setQuantity(quantity - 1);
         }
     };
 
     return(
         <div>
-            <h1>
-                Stock de zapatos
-            </h1>
+            <h1>Stock de zapatos</h1>
             <div className="counter-display">
                 {quantity}
             </div>
